@@ -17,7 +17,7 @@ parts = randomizer.sample(300)
 
 parts.each_with_index do |part, i|
   if i < parts.length - 1
-    if parts[i] == parts[i+1]
+    while parts[i] == parts[i+1]
       parts[i+1] = randomizer.sample
     end
   end

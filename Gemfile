@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'algorithmia'
-gem 'dotenv-rails'
+
+group :developement, :test do
+  gem 'dotenv-rails'
+  gem 'pry'
+end

@@ -11,7 +11,7 @@ dialogue = get_dialogue
 # the key is a character name
 # the value is an array of all their lines of dialogue
 dialogue.each do |character, paragraphs|
-  if character == "Michael"
+  if character == "Tobias"
 
     # generate array of sentences
     trigram_file_name = "#{character}.txt"

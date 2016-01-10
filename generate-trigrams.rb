@@ -22,7 +22,7 @@ end
 # the key is a character name
 # the value is an array of all their lines of dialogue
 dialogue.each do |character, paragraphs|
-  trigram_file_name = "#{character}.txt"
+  trigram_file_name = "#{character.sub(' ', '_')}.txt"
 
   if existing_files.include? trigram_file_name 
     puts "Already have trigrams for #{character}"

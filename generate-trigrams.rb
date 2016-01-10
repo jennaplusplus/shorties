@@ -1,13 +1,13 @@
 require './client'
-require 'json'
 require './create-hash'
-require 'dotenv'
-require 'pry'
+require 'i18n'
+require 'json'
 require 'uri'
-Dotenv.load
 
 COLLECTION = ".my/ArrestedDevelopmentTrigrams"
 MIN_LINES = 10
+
+I18n.config.available_locales = :en
 
 dialogue = get_dialogue
 
@@ -40,7 +40,7 @@ dialogue.each do |character, paragraphs|
   # generate array of sentences
   response = client.class.post(
     "/algo/StanfordNLP/SentenceSplit/0.1.0",
-    :body => paragraphs.join(" ").to_json,
+    :body => I18n.transliterate(paragraphs.join(" ")).to_json,
   )
   corpus = (JSON.parse(response.body)["result"])
 
